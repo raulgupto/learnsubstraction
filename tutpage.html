@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+   <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+<!--    <script type="text/javascript" src="js/mdb.min.js"></script>-->
+    <title>Learn Substraction</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <!-- Template styles -->
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+        /* Necessary for full page carousel*/
+        
+        html,
+        body {
+            height: 100%;
+        }
+        /* Navigation*/
+        
+        .navbar {
+            background-color: transparent;
+        }
+        .text{
+            color:white;
+            text-decoration-color: aqua;
+        }
+        .card-image-div{
+            max-height: 450px;
+            max-width: 400px;
+        }
+        
+        .top-nav-collapse {
+            background-color: #4285F4;
+        }
+        
+        footer.page-footer {
+            background-color: #4285F4;
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                background-color: #4285F4;
+            }
+        }
+        /* Carousel*/
+        
+        .carousel {
+            height: 50%;
+        }
+        
+        @media (max-width: 776px) {
+            .carousel {
+                height: 100%;
+            }
+        }
+        
+        .carousel-item,
+        .active {
+            height: 100%;
+        }
+        
+        .carousel-inner {
+            height: 100%;
+        }
+        
+        .carousel-item:nth-child(1) {
+            background-image: url("1.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            opacity: 0.5;
+        }
+        
+        .carousel-item:nth-child(2) {
+            background-image: url("2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.5;
+        }
+        
+        .carousel-item:nth-child(3) {
+            background-image: url("3.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+            opacity: 0.5;
+        }
+        /*Caption*/
+        
+        .flex-center {
+            color: #fff;
+        }
+        .video{
+            box-shadow: 5px 5px 2px grey;
+        }
+    </style>
+    
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+             $("counting-btn-crs").click(function() {
+                $('html,body').animate({
+                scrollTop: $("#learn").offset().top},'slow');
+                }); 
+        var randnumbig=0;
+         var  randnumsmall=0;
+        var count=10;
+            generaterandom();
+       
+        function generaterandom(){
+             randnumbig=Math.floor(Math.random()*10+1);
+             randnumsmall=Math.floor(Math.random()*10+1);
+             randnumsmall=randnumsmall%randnumbig; 
+            $("#bignum").text(randnumbig);
+            $("#smallnum").text(randnumsmall);
+            
+        }
+        $("#enter").click(function(){
+        var value=$("#inputresult").val();
+        console.log(value);
+        if((randnumbig-randnumsmall)==value){
+            if(count==0){
+               $("#sucessmodal").modal({show: true}); 
+                window.open("index.html");
+                count=10;
+            }else{
+            $("#correctmodal").modal({show: true});
+            count--;
+                $("#inputresult").text("");
+            }
+            
+        }
+            else
+                $("#incorrectmodal").modal({show:true});
+            generaterandom();
+        });
+        });
+
+        
+    </script>
+
+</head>
+
+<body>
+
+
+    <!--Navbar-->
+    <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
+
+        <!-- Collapse button-->
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <div class="container">
+
+            <!--Collapse content-->
+            <div class="collapse navbar-toggleable-xs" id="collapseEx">
+                <!--Navbar Brand-->
+               
+                <!--Links-->
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link text" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.Collapse content-->
+
+        </div>
+
+    </nav>
+    <!--/.Navbar-->
+
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-1" data-slide-to="1"></li>
+            <li data-target="#carousel-example-1" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active">
+                <!--Caption-->
+                <div class="flex-center animated fadeInDown" id="learn">
+                    <ul>
+                        <li>
+                            <h1 class="h1-responsive text">Learn Substraction</h1></li>
+                        <li>
+                            <p class="text">Few Simple steps to learn.</p>
+                        </li>
+                        <li>
+<!--                            <a target="_blank" class="btn btn-primary btn-lg">Get Started!</a>-->
+                        </li>
+                    </ul>
+                </div>
+                <!--Caption-->
+            </div>
+            <!--/.First slide-->
+
+            <!--Second slide -->
+            <div class="carousel-item">
+                <!--Caption-->
+                <div class="flex-center animated fadeInDown">
+                    <ul>
+                        <li>
+                            <h1 class="h1-responsive text">Step Two: Counting</h1>
+                        </li>
+                        <li>
+                            <p class="text">Its never too late to start!</p>
+                        </li>
+                        <li>
+                            <a id="counting-btn-crs"class="btn btn-primary btn-lg" href="counting.html">Start Counting</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Caption-->
+            </div>
+            <!--/.Second slide -->
+
+            <!--Third slide-->
+            <div class="carousel-item">
+                <!--Caption-->
+                <div class="flex-center animated fadeInDown">
+                    <ul>
+                        <li>
+                            <h1 class="h1-responsive text">Tutorial from Genius!</h1></li>
+                        <li>
+                            <p class="text">Watch this video on substraction!</p>
+                        </li>
+                        <li>
+<!--                            <a target="_blank" href="#" class="btn btn-default btn-lg">Watch Video</a>-->
+                        </li>
+                    </ul>
+                </div>
+                <!--Caption-->
+            </div>
+            <!--/.Third slide-->
+        </div>
+        <!--/.Slides-->
+
+        <!--Controls-->
+        <a class="left carousel-control" href="#carousel-example-1" role="button" data-slide="prev">
+            <span class="icon-prev" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-1" role="button" data-slide="next">
+            <span class="icon-next" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+    </div>
+    <!--/.Carousel Wrapper-->
+
+    <br>
+
+
+    <div class="container"id="video">
+      <div class="row">
+          <div class="col-sm-1">
+          </div>
+        <div class="col-sm-10">
+
+            <h2>A story of Substraction!</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="video.MP4?autoplay=0"></iframe>
+            </div>
+        </div>
+        </div>
+    </div>
+    <br>
+    
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-xs-4">
+                <h4>Try it out yourself!</h4>
+            </div>
+            <div class="col-xs-1"><button id="bignum"class="btn btn-default"></button></div>
+            <div class="col-xs-1"><h4>-</h4></div>
+            <div class="col-xs-1"><button id="smallnum"class="btn btn-default"></button></div>
+            <div class="col-xs-1"><h4>=</h4></div>
+            
+            <div class="col-xs-1 form-group"><input type="text" class="form" id="inputresult"></div>
+            <div class="col-xs-2"><button id="enter"class="btn btn-default">Check</button></div>
+        </div>
+        
+    </div>
+    
+        <!-- Modal 0 -->
+    <div id="correctmodal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+    <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Wow! Correct Answer</h4>
+          </div>
+          <div class="modal-body">
+            <p>You're doing great!<br>Practice More!!<br> </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!--            <button type="button" class="btn btn-primary"id="destination">Select Destination</button>-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- Modal 1 -->
+    <div id="incorrectmodal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+    <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Incorrect Answer</h4>
+          </div>
+          <div class="modal-body">
+            <p>You're one step behind Awesomeness!<br>Try again!<br> </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!--            <button type="button" class="btn btn-primary"id="destination">Select Destination</button>-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+      <!-- Modal 2 -->
+    <div id="sucessmodal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+    <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Congratulations!</h4>
+          </div>
+          <div class="modal-body">
+            <p>You're Awesome!<br>Sucessfully answered 10 questions!<br>Try more 10 questions??<br>NO?? Then continue in next window! </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!--            <button type="button" class="btn btn-primary"id="destination">Select Destination</button>-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+
+
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only">
+
+     
+        <hr>
+
+        <!--Call to action-->
+        <div class="call-to-action">
+            <h4>Project of AI : Teach Subtraction!</h4>
+           
+        </div>
+        <!--/.Call to action-->
+
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2016 Copyright: <a href="http://www.facebook.com/smart.gupta1"> Rahul </a>
+
+            </div>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+</body>
+
+</html>
