@@ -36,6 +36,10 @@
             color:white;
             text-decoration-color: aqua;
         }
+        .card-image-div{
+            max-height: 450px;
+            max-width: 400px;
+        }
         
         .top-nav-collapse {
             background-color: #4285F4;
@@ -97,6 +101,14 @@
             color: #fff;
         }
     </style>
+    <script>
+            $("counting-btn-crs").click(function() {
+            $('html,body').animate({
+                scrollTop: $(".proceedcounting").offset().top},
+                'slow');
+            });
+        
+    </script>
 
 </head>
 
@@ -178,7 +190,7 @@
                             <p class="text">Its never too late to start!</p>
                         </li>
                         <li>
-                            <a target="_blank" href="#" class="btn btn-primary btn-lg">Start Counting</a>
+                            <a target="_blank" id="counting-btn-crs"class="btn btn-primary btn-lg">Start Counting</a>
                         </li>
                     </ul>
                 </div>
@@ -197,7 +209,7 @@
                             <p class="text">Few Basic tricks in Substraction</p>
                         </li>
                         <li>
-                            <a target="_blank" href="#" class="btn btn-default btn-lg">Support forum</a>
+                            <a target="_blank" href="#" class="btn btn-default btn-lg">Watch Video</a>
                         </li>
                     </ul>
                 </div>
@@ -223,16 +235,16 @@
     <br>
 
     <!--Content-->
-    <div class="container">
-        <div class="row">
+    <div class="container ">
+        <div class="row proceedcounting">
             <!--First columnn-->
             <div class="col-md-4">
                 <!--Card-->
-                <div class="card">
+                <div class="card card-image-div">
 
                     <!--Card image-->
-                    <div class="view overlay hm-white-slight">
-                        <img src="http://mdbootstrap.com/images/regular/city/img%20(2).jpg" class="img-fluid" alt="">
+                    <div class="view overlay hm-white-slight ">
+                        <img src="counting.jpg" class="img-fluid " alt="">
                         <a href="#">
                             <div class="mask"></div>
                         </a>
@@ -242,10 +254,10 @@
                     <!--Card content-->
                     <div class="card-block">
                         <!--Title-->
-                        <h4 class="card-title">Card title</h4>
+                        <h4 class="card-title">Learn Counting</h4>
                         <!--Text-->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Read more</a>
+                        <p class="card-text">Before learning how to subtract, you should have the idea of number system and counting.</p>
+                        <a href="#" class="btn btn-primary"> Proceed</a>
                     </div>
                     <!--/.Card content-->
 
@@ -257,11 +269,11 @@
             <!--Second columnn-->
             <div class="col-md-4">
                 <!--Card-->
-                <div class="card">
+                <div class="card card-image-div">
 
                     <!--Card image-->
-                    <div class="view overlay hm-white-slight">
-                        <img src="http://mdbootstrap.com/images/regular/city/img%20(4).jpg" class="img-fluid" alt="">
+                    <div class="view overlay  hm-white-slight">
+                        <img src="compare.jpg" class="img-fluid " alt="">
                         <a href="#">
                             <div class="mask"></div>
                         </a>
@@ -271,10 +283,10 @@
                     <!--Card content-->
                     <div class="card-block">
                         <!--Title-->
-                        <h4 class="card-title">Card title</h4>
+                        <h4 class="card-title">Compare Numbers</h4>
                         <!--Text-->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Read more</a>
+                        <p class="card-text">You should numbers comparison before substraction!</p>
+                        <a href="#" class="btn btn-primary">Know</a>
                     </div>
                     <!--/.Card content-->
 
@@ -286,11 +298,11 @@
             <!--Third columnn-->
             <div class="col-md-4">
                 <!--Card-->
-                <div class="card">
+                <div class="card card-image-div">
 
                     <!--Card image-->
-                    <div class="view overlay hm-white-slight">
-                        <img src="http://mdbootstrap.com/images/regular/city/img%20(8).jpg" class="img-fluid" alt="">
+                    <div class="view overlay  hm-white-slight">
+                        <img src="tutorial.jpg" class="img-fluid" alt="">
                         <a href="#">
                             <div class="mask"></div>
                         </a>
@@ -300,9 +312,9 @@
                     <!--Card content-->
                     <div class="card-block">
                         <!--Title-->
-                        <h4 class="card-title">Card title</h4>
+                        <h4 class="card-title">Tutorial</h4>
                         <!--Text-->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Watch a short video and learn more about subtraction.</p>
                         <a href="#" class="btn btn-primary">Read more</a>
                     </div>
                     <!--/.Card content-->
