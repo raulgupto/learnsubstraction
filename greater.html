@@ -6,7 +6,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+<!--    <script type="text/javascript" src="js/mdb.min.js"></script>-->
     <title>Learn Substraction</title>
 
     <!-- Font Awesome -->
@@ -19,7 +28,7 @@
     <link href="css/mdb.min.css" rel="stylesheet">
 
     <!-- Template styles -->
-    <style rel="stylesheet">
+   <style rel="stylesheet">
         /* TEMPLATE STYLES */
         /* Necessary for full page carousel*/
         
@@ -32,7 +41,16 @@
         .navbar {
             background-color: transparent;
         }
-         .top-nav-collapse {
+        .text{
+            color:white;
+            text-decoration-color: aqua;
+        }
+        .card-image-div{
+            max-height: 450px;
+            max-width: 400px;
+        }
+        
+        .top-nav-collapse {
             background-color: #4285F4;
         }
         
@@ -45,7 +63,138 @@
                 background-color: #4285F4;
             }
         }
+        /* Carousel*/
+        
+        .carousel {
+            height: 50%;
+        }
+        
+        @media (max-width: 776px) {
+            .carousel {
+                height: 100%;
+            }
+        }
+        
+        .carousel-item,
+        .active {
+            height: 100%;
+        }
+        
+        .carousel-inner {
+            height: 100%;
+        }
+        
+        .carousel-item:nth-child(1) {
+            background-image: url("1.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            opacity: 0.5;
+        }
+        
+        .carousel-item:nth-child(2) {
+            background-image: url("2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.5;
+        }
+        
+        .carousel-item:nth-child(3) {
+            background-image: url("3.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+            opacity: 0.5;
+        }
+        /*Caption*/
+        
+        .flex-center {
+            color: #fff;
+        }
+        
         </style>
+    <script type="text/javascript">
+    $(document).ready(function(){
+             $("counting-btn-crs").click(function() {
+                $('html,body').animate({
+                scrollTop: $("#learn").offset().top},'slow');
+                }); 
+        var randnumbig=0;
+         var  randnumsmall=0;
+        var count=9;
+            generaterandom();
+       
+        function generaterandom(){
+             randnumbig=Math.floor(Math.random()*10+1);
+             randnumsmall=Math.floor(Math.random()*10+1);
+//             randnumsmall=randnumsmall%randnumbig; 
+            $("#bignum").text(randnumbig);
+            $("#smallnum").text(randnumsmall);
+            
+        }
+        $("#enter").click(function(){
+//        var value=$("#inputresult").val();
+//        console.log(value);
+        if((randnumbig==randnumsmall)){
+            if(count==0){
+               $("#sucessmodal").modal({show: true}); 
+                window.open("index.html");
+                count=10;
+            }else{
+            $("#correctmodal").modal({show: true});
+            count--;
+                $("#inputresult").text("");
+            }
+            
+        }
+            else
+                $("#incorrectmodal").modal({show:true});
+            generaterandom();
+        });
+        $("#bignum").click(function(){
+//        var value=$("#inputresult").val();
+//        console.log(value);
+        if((randnumbig>randnumsmall)){
+            if(count==0){
+               $("#sucessmodal").modal({show: true}); 
+                window.open("index.html");
+                count=10;
+            }else{
+            $("#correctmodal").modal({show: true});
+            count--;
+                $("#inputresult").text("");
+            }
+            
+        }
+            else
+                $("#incorrectmodal").modal({show:true});
+            generaterandom();
+        });
+         $("#smallnum").click(function(){
+//        var value=$("#inputresult").val();
+            // alert("dsa");
+//        console.log(value);
+        if((randnumsmall>randnumbig)){
+            if(count==0){
+               $("#sucessmodal").modal({show: true}); 
+                window.open("index.html");
+                count=10;
+            }else{
+            $("#correctmodal").modal({show: true});
+            count--;
+                $("#inputresult").text("");
+            }
+            
+        }
+            else
+                $("#incorrectmodal").modal({show:true});
+            generaterandom();
+        });
+        });
+        
+        
+
+        
+    </script>
+
     </head>
 
 <body>
@@ -81,8 +230,172 @@
 
     </nav>
     <!--/.Navbar-->
+  
+  <!--Carousel Wrapper-->
+    <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-1" data-slide-to="1"></li>
+            <li data-target="#carousel-example-1" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active">
+                <!--Caption-->
+                <div class="flex-center animated fadeInDown" id="learn">
+                    <ul>
+                        <li>
+                            <h1 class="h1-responsive text">Learn Substraction</h1></li>
+                        <li>
+                            <p class="text">Few Simple steps to learn.</p>
+                        </li>
+                      
+                    </ul>
+                </div>
+                <!--Caption-->
+            </div>
+            <!--/.First slide-->
+
+            <!--Second slide -->
+            <div class="carousel-item">
+                <!--Caption-->
+                <div class="flex-center animated fadeInDown">
+                    <ul>
+                        <li>
+                            <h1 class="h1-responsive text">Learn Counting</h1>
+                        </li>
+                        <li>
+                            <p class="text">Count the number of apples below!</p>
+                        </li>
+                       
+                    </ul>
+                </div>
+                <!--Caption-->
+            </div>
+            <!--/.Second slide -->
+
+            <!--Third slide-->
+            <div class="carousel-item">
+                <!--Caption-->
+                <div class="flex-center animated fadeInDown">
+                    <ul>
+                        <li>
+                            <h1 class="h1-responsive text">Tutorial from Genius</h1></li>
+                        <li>
+                            <p class="text">Few Basic tricks in Substraction</p>
+                        </li>
+                        <li>
+                            <a target="_blank" href="#" class="btn btn-default btn-lg">Watch Video</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Caption-->
+            </div>
+            <!--/.Third slide-->
+        </div>
+        <!--/.Slides-->
+
+        <!--Controls-->
+        <a class="left carousel-control" href="#carousel-example-1" role="button" data-slide="prev">
+            <span class="icon-prev" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-1" role="button" data-slide="next">
+            <span class="icon-next" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+    </div>
+    <!--/.Carousel Wrapper-->
+<br>
     
+  <div id="cont" class="container">
+<!--      <img src="apple.png" height=100px width=100px>-->
+  </div>
+<br>
+    <div class="row">
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-2">
+            <h4> Click on the Greater Number! </h4>
+        </div>
+        <div class="col-xs-1"><button id="bignum"class="btn btn-default"></button></div>
+       
+        <div class="col-xs-1"><button id="smallnum"class="btn btn-default"></button></div>
+     
+        <div class="col-xs-2"><button class="btn btn-default" id="enter">EQUAL</button></div>
+  </div>
     
+      <!-- Modal 0 -->
+    <div id="correctmodal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+    <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Wow! Correct Answer</h4>
+          </div>
+          <div class="modal-body">
+            <p>You're doing great!<br>Practice More!!<br> </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!--            <button type="button" class="btn btn-primary"id="destination">Select Destination</button>-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- Modal 1 -->
+    <div id="incorrectmodal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+    <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Incorrect Answer</h4>
+          </div>
+          <div class="modal-body">
+            <p>You're one step behind Awesomeness!<br>Try again!<br> </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!--            <button type="button" class="btn btn-primary"id="destination">Select Destination</button>-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+      <!-- Modal 2 -->
+    <div id="sucessmodal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+    <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Congratulations!</h4>
+          </div>
+          <div class="modal-body">
+            <p>You're Awesome!<br>Sucessfully answered 10 questions!<br>Try more 10 questions??<br>NO?? Then continue in next window! </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!--            <button type="button" class="btn btn-primary"id="destination">Select Destination</button>-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!--Footer-->
     <footer class="page-footer center-on-small-only">
 
@@ -91,7 +404,7 @@
 
         <!--Call to action-->
         <div class="call-to-action">
-             <h4>Project of AI : Teach Subtraction!</h4>
+            <h4>Project of AI : Teach Subtraction!</h4>
            
         </div>
         <!--/.Call to action-->
@@ -112,18 +425,7 @@
     <!-- SCRIPTS -->
 
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/tether.min.js"></script>
-
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-
-
+  
 </body>
 
 </html>

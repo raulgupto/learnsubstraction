@@ -114,7 +114,13 @@
     <script type="text/javascript">
     $(document).ready(function(){
         var randnum=0;
-        var count=10;
+        var count=9;
+         randnum=Math.floor(Math.random()*10+1);
+              var html='<img src="apple.png" height=100px width=100px>';
+         $("#cont").html(html) ;
+            for(var i=1;i<randnum;i++){
+                $("#cont").append(html);
+            }
         function generaterandom(){
              randnum=Math.floor(Math.random()*10+1);
               var html='<img src="apple.png" height=100px width=100px>';
@@ -129,6 +135,7 @@
         $("#enter").click(function(){
         var value=$("#entered").val();
         console.log(value);
+            console.log(randnum);
         if(randnum==value){
             if(count==0){
                $("#sucessmodal").modal({show: true}); 
