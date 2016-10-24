@@ -101,12 +101,14 @@
             color: #fff;
         }
     </style>
-    <script>
-            $("counting-btn-crs").click(function() {
-            $('html,body').animate({
-                scrollTop: $(".proceedcounting").offset().top},
-                'slow');
-            });
+    <script type="text/javascript">
+        $(document).ready(function(){
+             $("counting-btn-crs").click(function() {
+                $('html,body').animate({
+                scrollTop: $("#learn").offset().top},'slow');
+                }); 
+        })
+
         
     </script>
 
@@ -162,7 +164,7 @@
             <!--First slide-->
             <div class="carousel-item active">
                 <!--Caption-->
-                <div class="flex-center animated fadeInDown">
+                <div class="flex-center animated fadeInDown" id="learn">
                     <ul>
                         <li>
                             <h1 class="h1-responsive text">Learn Substraction</h1></li>
@@ -170,7 +172,7 @@
                             <p class="text">Few Simple steps to learn.</p>
                         </li>
                         <li>
-                            <a target="_blank" href="#" class="btn btn-primary btn-lg">Get Started!</a>
+                            <a target="_blank" class="btn btn-primary btn-lg">Get Started!</a>
                         </li>
                     </ul>
                 </div>
@@ -190,7 +192,7 @@
                             <p class="text">Its never too late to start!</p>
                         </li>
                         <li>
-                            <a target="_blank" id="counting-btn-crs"class="btn btn-primary btn-lg">Start Counting</a>
+                            <a id="counting-btn-crs"class="btn btn-primary btn-lg" >Start Counting</a>
                         </li>
                     </ul>
                 </div>
@@ -257,7 +259,7 @@
                         <h4 class="card-title">Learn Counting</h4>
                         <!--Text-->
                         <p class="card-text">Before learning how to subtract, you should have the idea of number system and counting.</p>
-                        <a href="#" class="btn btn-primary"> Proceed</a>
+                        <a href="counting.html" class="btn btn-primary"> Proceed</a>
                     </div>
                     <!--/.Card content-->
 
@@ -286,7 +288,7 @@
                         <h4 class="card-title">Compare Numbers</h4>
                         <!--Text-->
                         <p class="card-text">You should numbers comparison before substraction!</p>
-                        <a href="#" class="btn btn-primary">Know</a>
+                        <a href="greater.html" class="btn btn-primary">Know</a>
                     </div>
                     <!--/.Card content-->
 
@@ -337,7 +339,7 @@
 
         <!--Call to action-->
         <div class="call-to-action">
-            <h4>Material Design for Bootstrap</h4>
+            <h4>Project of AI : Teach Subtraction!</h4>
            
         </div>
         <!--/.Call to action-->
